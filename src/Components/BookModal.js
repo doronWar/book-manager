@@ -18,11 +18,27 @@ class BookModal extends React.Component{
     super();
     this.state={
       bookName:"",
-      Date:""
+      date:"2013-12-31"
     }
   }
 
+  
+  
+  componentDidMount(){
+    if(this.props.bookInfo){
+      console.info(this.props.bookInfo);
+      this.setState({bookName: this.props.bookInfo.title});
+      // this.bookDate.value = this.props.bookInfo.date;
+      console.info(this.bookDate.value);
+    }
+  }
+
+  componentDidUpdate(){
+    console.info(this.state.date);
+  }
   render(){
+    const title = this.props.title? this.props.title: "Edit Info";
+    
     return(
 
 
@@ -30,7 +46,7 @@ class BookModal extends React.Component{
     >
       <Modal.Dialog>
         <Modal.Header>
-          <Modal.Title>Add New Book</Modal.Title>
+          <Modal.Title>{title}</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -39,13 +55,15 @@ class BookModal extends React.Component{
               <Col xs={6} md={4}>
                 <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
                   <label>Book Name
-                    <input type="text" value={this.state.name}
+                    <input type="text" value={this.state.bookName}
                            placeholder="Enter books name"
                            onChange={(e)=>this.setState({bookName:e.currentTarget.value})}
                     />
                   </label>
                   <label>Book Release Date
                     <input type="date"
+                           value={this.state.date}
+                           onChange={(e)=>this.setState({date: e.currentTarget.value})}
                            ref={(bookDate)=>this.bookDate = bookDate}
                     />
                   </label>

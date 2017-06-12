@@ -15,7 +15,7 @@
 //                      onChange={(e)=>this.setState({bookName:e.currentTarget.value})}
 //               />
 //             </label>
-//             <label>Book Release Date
+//             <label>Book Release date
 //               <input type="date"
 //                      ref={(bookDate)=>this.bookDate = bookDate}
 //               />

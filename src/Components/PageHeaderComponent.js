@@ -12,7 +12,7 @@ class PageHeaderComponent extends React.Component{
     return(
 
       <PageHeader>Book Data Manager App
-      <input placeholder="SEARCH FOR BOOK..."/>
+      <input className="Search-control" placeholder="SEARCH FOR BOOK..."/>
 
       </PageHeader>
     )

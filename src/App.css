@@ -1,43 +1,56 @@
-/*.App {*/
+.App {
   /*text-align: center;*/
-/*}*/
+  width:100vw;
+  height:100vh;
+  /*background-color: rgba(200,117,51,0.6);*/
+  /*background: linear-gradient(to bottom, rgba(243,226,199,1) 0%,rgba(140,104,53,1) 0%,rgba(165,114,38,1) 25%,rgba(178,129,57,1) 37%,rgba(178,125,46,1) 44%,rgba(183,131,53,1) 61%,rgba(160,101,12,1) 99%);*/
+}
 
-/*.App-logo {*/
-  /*animation: App-logo-spin infinite 20s linear;*/
-  /*height: 80px;*/
-/*}*/
 
-/*.App-header {*/
-  /*background-color: #222;*/
-  /*height: 150px;*/
-  /*padding: 20px;*/
-  /*color: white;*/
-/*}*/
 
-/*.App-intro {*/
-  /*font-size: large;*/
-/*}*/
+.main-book-holder{
 
-/*@keyframes App-logo-spin {*/
-  /*from { transform: rotate(0deg); }*/
-  /*to { transform: rotate(360deg); }*/
-/*}*/
+}
 
 .book-holder{
   list-style: none;
-  width:50%;
+  width:250px;
+  height:70vh;
+  margin-top: 0;
+  margin-bottom: 1px;
+  padding-left: 0;
+  overflow: auto;
+  /*background-color: rgba(199,241,255,0.5);*/
+  border-right: 1px solid black;
+  background: linear-gradient(to bottom, rgba(243,226,199,1) 0%,rgba(182,141,76,1) 0%,rgba(182,141,76,1) 25%,rgba(182,141,76,1) 37%,rgba(182,141,76,1) 44%,rgba(193,158,103,1) 61%,rgba(233,212,179,1) 100%);
 }
 
 .book-holder li{
   position: relative;
+  border-bottom: 1px solid black;
+  background: linear-gradient(to bottom, rgba(243,226,199,1) 0%,rgba(182,141,76,1) 0%,rgba(182,141,76,1) 25%,rgba(182,141,76,1) 37%,rgba(182,141,76,1) 44%,rgba(193,158,103,1) 61%,rgba(233,212,179,1) 100%);
 }
+.book-holder li p{
+  font-size: 21px;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+
 
 .book-info{
   position: absolute;
   top: 20%;
-  left:30%;
+  right:15%;
+
 }
 
+.book-info .container{
+  width: 300px;
+}
+.book-info  .col-md-4{
+  width: 100%;
+}
 .modal{
   /*position: absolute;*/
   /*top: 0;*/
@@ -45,4 +58,48 @@
   /*width:100vw;*/
   /*height:100vh;*/
   background-color: rgba(2,2,2,0.3);
+}
+
+.App .page-header{
+  margin-bottom: 0;
+  background-color: white;
+  border-bottom: 1px solid grey;
+}
+.App > .btn {
+  margin-left:48px;
+}
+
+.Search-control{
+  position: absolute;
+  top:45px;
+  right: 50px;
+  border-radius: 15px;
+  width:185px;
+  height:28px;
+  font-size: 12px;
+}
+
+
+.book-info > .container > .row  > .col-md-4 > .thumbnail{
+  height: 455px;
+  position: relative;
+  box-shadow: 4px 8px 16px 3px;
+  /*background: linear-gradient(to bottom, rgba(243,226,199,1) 0%,rgba(182,141,76,1) 0%,rgba(182,141,76,1) 25%,rgba(182,141,76,1) 37%,rgba(182,141,76,1) 44%,rgba(193,158,103,1) 61%,rgba(233,212,179,1) 100%);*/
+}
+
+/*.col-md-4{*/
+  /**/
+/*}*/
+.info-btn-holder{
+  position: absolute;
+  bottom:30px;
+  left: 0;
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-img{
+  widht:200px;
+  height: 100px;
 }

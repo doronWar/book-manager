@@ -29,6 +29,8 @@ class App extends Component {
       openModal: false,
     }
     this.closeModal= this.closeModal.bind(this);
+    // this.openModal= this.openModal.bind(this);
+
   }
 
   bookList() {
@@ -44,7 +46,7 @@ class App extends Component {
                         id={counter++}
                         onMouseOver={(e) => this.props.curentBookHovered(e.currentTarget.id)}
                        // onMouseOut={(e) => this.props.clearBookHovered()}
-          >{book.name}</li>)
+          ><p>{book.title}</p></li>)
         })}
       </ul>
     )
@@ -56,6 +58,10 @@ class App extends Component {
       this.setState({openModal: false})
     }
 
+  }
+
+  openModal(){
+    this.setState({openModal: true})
   }
 
   componentDidMount() {
@@ -80,16 +86,21 @@ class App extends Component {
     return (
       <div className="App">
         <PageHeaderComponent/>
+        <div className="main-book-holder">
         {this.bookList()}
-        {this.props.curentBook!==0 && <InfoPanel/>}
+        </div>
+        {this.props.curentBook!==0 && <InfoPanel
+
+        />}
         <Button
         onClick={() => {
           this.props.clearBookHovered()
-          this.setState({openModal: true})
+          this.openModal();
         }}
         >Add a Book</Button>
         {this.state.openModal && <BookModal
-        closeModal={this.closeModal}/>}
+        closeModal={this.closeModal}
+        title="Add New Book"/>}
 
       </div>
     );
