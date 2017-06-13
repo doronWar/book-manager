@@ -7,11 +7,21 @@ import {
 } from 'react-bootstrap'
 class PageHeaderComponent extends React.Component{
 
+  constructor(){
+    super();
+    this.state={
+      searchTerm: "",
+    }
+
+  }
+
+
+
 
   render(){
     return(
 
-      <PageHeader>Book Data Manager App
+      <PageHeader><div className="header"> Book Data Manager App</div>
       <input className="Search-control" placeholder="SEARCH FOR BOOK..."/>
 
       </PageHeader>

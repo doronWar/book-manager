@@ -32,6 +32,11 @@ class BookModal extends React.Component {
 
   saveChanges(event) {
 
+    // const test = [...this.props.bookArr]
+    // const oneBook = test.find((book)=>  book.id === "10005")
+    // test[1]= Object.assign({}, oneBook)
+    // console.info(test[1]);
+    //
     if(this.state.bookName=== ""){
 
       this.setState({nameValidation: "error"})
@@ -54,9 +59,12 @@ class BookModal extends React.Component {
       };
 
       if (this.props.bookInfo) {
-        newBook.id= parseInt(this.props.bookArr[this.props.bookArr.length - 1].id)
-          console.info(newBook);
+        newBook.id= this.props.bookInfo.id
+
+        // console.info(newBook, this.props.bookArr[1]);
         this.props.saveChanges(newBook);
+
+        this.props.closeModal(event , true);
         //load save function
       }
       else {
@@ -76,7 +84,7 @@ class BookModal extends React.Component {
 
   componentDidMount() {
     if (this.props.bookInfo) {
-      console.info(this.props.bookInfo);
+
       this.setState({
         bookName: this.props.bookInfo.title,
         date: this.props.bookInfo.date,
@@ -98,7 +106,7 @@ class BookModal extends React.Component {
     if(this.state.date.length===10 && this.state.dateValidation === "error"){
       this.setState({dateValidation: null});
     }
-    console.info(this.state.date.length);
+
 
   }
 

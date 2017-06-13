@@ -18,7 +18,7 @@ export default function BookArrReducer(curent=[], action) {
 
     case 'SAVE_CHANGES':
       const tBookArr = [...curent];
-      const i = tempBookArr.findIndex((book)=> book.id === action.book.id);
+      const i = tBookArr.findIndex((book)=> {return book.id === action.book.id});
       tBookArr[i]= Object.assign({}, action.book)
       return tBookArr;
 

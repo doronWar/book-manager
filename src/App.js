@@ -72,10 +72,52 @@ class App extends Component {
     xhr.open('GET', 'booklist.json');
     xhr.send();
     xhr.addEventListener('load', (e) => {
-      this.props.saveLoadedJason(JSON.parse(e.currentTarget.response).books);
+
+      // this.props.saveLoadedJason(JSON.parse(e.currentTarget.response).books);
+      this.pipeFunc(JSON.parse(e.currentTarget.response).books);
     })
   }
 
+  pipeFunc(books){
+    books=books.map((book)=>{
+      let title = book.title.split(' ');
+      let author = book.author.split(' ');
+
+      title = title.map((word)=>{
+        return this.upperLowerCasechanger(word);
+      });
+
+      author = author.map((word)=>{
+        return this.upperLowerCasechanger(word);
+      });
+      book.title = title.join(' ');
+      book.author = author.join(' ');
+      return book;
+    });
+    this.props.saveLoadedJason(books);
+  }
+
+  upperLowerCasechanger(word){
+    word= word.match(/[a-z, A-Z, .]/g);
+
+    for (let i in word) {
+      if(i==='0'){
+        word[i]= word[i].toUpperCase();
+      }
+      else{
+        word[i]=word[i].toLowerCase();
+      }
+    }
+    return word.join('')
+
+  }
+
+  closeInfoComponent(event){
+    console.info(event.target.className );
+    if(event.target.className === 'main-book-holder' || event.target.className === 'page-header' || event.target.className === 'header' || event.target.className === 'App'){
+      this.props.clearBookHovered();
+    }
+  }
   // componentDidUpdate() {
   //   // console.info(this.props.bookArr);
   //
@@ -87,9 +129,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App"
+           onClick={(e)=>this.closeInfoComponent(e)}>
         <PageHeaderComponent/>
-        <div className="main-book-holder">
+        <div className="main-book-holder"
+        >
         {this.bookList()}
         </div>
         {this.props.curentBook!==0 && <InfoPanel
@@ -97,7 +141,7 @@ class App extends Component {
         />}
         <Button
         onClick={() => {
-          this.props.clearBookHovered()
+          this.props.clearBookHovered();
           this.openModal();
         }}
         >Add a Book</Button>

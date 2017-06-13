@@ -1,13 +1,13 @@
 {"books":[
   {
-    "title": "Anna Karenina",
+    "title": "@anna Karenina",
     "author": "Leo Tolstoy",
     "date": "1902-07-01",
     "img": " none",
     "id": "10001"
   },
   {
-    "title": "Madame Bovary",
+    "title": "MadamE /bovary",
     "author": "Gustave Flaubert",
     "date": "1942-07-02",
     "img": " none",
@@ -35,7 +35,7 @@
     "id": "10005"
   },
   {
-    "title": "Middlemarch ",
+    "title": "Middlemarch",
     "author": "George Eliot",
     "date": "1985-07-02",
     "img": " none",

@@ -20,9 +20,12 @@ class InfoPanel extends React.Component{
     this.closeEditModal= this.closeEditModal.bind(this);
   }
 
-  closeEditModal(event){
+  closeEditModal(event, canCloase){
 
     if(event.target.className==='modal' || event.target.id==='cancel-btn' ){
+      this.setState({openEditModal: false})
+    }
+    if(canCloase){
       this.setState({openEditModal: false})
     }
 
@@ -31,7 +34,9 @@ class InfoPanel extends React.Component{
   deleteBook(){
     if(window.confirm("are you sure you want to delete this book?")){
       this.props.deleteBookFromData(this.props.bookArr[this.props.curentBook].id)
+      this.props.clearBookHovered();
     }
+
 
   }
 
