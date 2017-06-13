@@ -1,22 +1,37 @@
 .App {
-  /*text-align: center;*/
   width:100vw;
   height:100vh;
-  /*background-color: rgba(200,117,51,0.6);*/
-  /*background: linear-gradient(to bottom, rgba(243,226,199,1) 0%,rgba(140,104,53,1) 0%,rgba(165,114,38,1) 25%,rgba(178,129,57,1) 37%,rgba(178,125,46,1) 44%,rgba(183,131,53,1) 61%,rgba(160,101,12,1) 99%);*/
-  background: linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+
 }
 
 
+.backg-img{
 
-.main-book-holder{
+  background: url(./background-2.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom:0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+
+}
+.shade{
+  background-color: rgba(2,2,2, .7);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  bottom:0;
+  right: 0;
+  left: 0;
 
 }
 
 .book-holder{
   list-style: none;
   width:250px;
-  height:80vh;
+  height:65vh;
   margin-top: 0;
   margin-bottom: 1px;
   padding-left: 0;
@@ -46,8 +61,8 @@
 
 .book-info{
   position: absolute;
-  top: 20%;
-  right:51%;
+  top: 15%;
+  left:35%;
 
 }
 
@@ -73,8 +88,8 @@
   background: linear-gradient(45deg, rgba(235,230,235,1) 0%, rgba(219,219,219,1) 47%, rgba(224,221,224,1) 100%);
   border-bottom: 1px solid grey;
 }
-.App > .btn {
-  margin-left:48px;
+.App > div > div >.btn {
+  margin-left:68px;
 }
 
 .Search-control{
@@ -90,10 +105,15 @@
 
 
 .book-info > .container > .row  > .col-md-4 > .thumbnail{
-  height: 505px;
+  height: 555px;
+  /*width: 433px;*/
   position: relative;
   box-shadow: 4px 8px 16px 3px;
   /*background: linear-gradient(to bottom, rgba(243,226,199,1) 0%,rgba(182,141,76,1) 0%,rgba(182,141,76,1) 25%,rgba(182,141,76,1) 37%,rgba(182,141,76,1) 44%,rgba(193,158,103,1) 61%,rgba(233,212,179,1) 100%);*/
+}
+
+.book-info > .container{
+  width: 433px;
 }
 
 /*.col-md-4{*/
@@ -101,7 +121,7 @@
 /*}*/
 .info-btn-holder{
   position: absolute;
-  bottom:30px;
+  bottom:20px;
   left: 0;
   width:100%;
   display: flex;

@@ -113,6 +113,9 @@ class App extends Component {
     return (
       <div className="App"
            onClick={(e) => this.closeInfoComponent(e)}>
+
+        <div className="backg-img">
+          <div className="shade">
         <PageHeaderComponent/>
         <div className="main-book-holder"
         >
@@ -131,7 +134,8 @@ class App extends Component {
           closeModal={this.closeModal}
 
           title="Add New Book"/>}
-
+          </div>
+        </div>
       </div>
     );
   }
