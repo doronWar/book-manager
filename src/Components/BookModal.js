@@ -3,12 +3,7 @@ import {connect} from 'react-redux'
 
 
 import {
-  Panel,
   Button,
-  Grid,
-  Row,
-  Col,
-  Thumbnail,
   Modal,
   FormGroup,
   FormControl,
@@ -32,63 +27,48 @@ class BookModal extends React.Component {
 
   saveChanges(event) {
 
-    // const test = [...this.props.bookArr]
-    // const oneBook = test.find((book)=>  book.id === "10005")
-    // test[1]= Object.assign({}, oneBook)
-    // console.info(test[1]);
-    //
-    if(this.state.bookName=== ""){
+    if (this.state.bookName === "") {
 
       this.setState({nameValidation: "error"})
     }
-    if(this.state.author=== ""){
+    if (this.state.author === "") {
 
       this.setState({authorValidation: "error"})
     }
-    if(this.state.date.length<1){
+    if (this.state.date.length < 1) {
       this.setState({dateValidation: "error"})
     }
     else {
 
-      const bookTitleExists =  this.props.bookArr.findIndex((book)=> book.title === this.state.bookName)
-      if(bookTitleExists!== -1){
+      const bookTitleExists = this.props.bookArr.findIndex((book) => book.title === this.state.bookName)
+      if (bookTitleExists !== -1) {
         window.alert("This book is already registered in the system")
       }
-      else{
-
-
+      else {
 
         const newBook = {
           title: this.state.bookName,
           author: this.state.author,
           date: this.state.date,
           img: " none",
-          // id: parseInt(this.props.bookArr[this.props.bookArr.length - 1].id) + 1
+
         };
 
         if (this.props.bookInfo) {
-          newBook.id= this.props.bookInfo.id
-
-          // console.info(newBook, this.props.bookArr[1]);
+          newBook.id = this.props.bookInfo.id
           this.props.saveChanges(newBook);
+          this.props.closeModal(event, true);
 
-          this.props.closeModal(event , true);
-          //load save function
         }
         else {
-          newBook.id= parseInt(this.props.bookArr[this.props.bookArr.length - 1].id) + 1
+          newBook.id = parseInt(this.props.bookArr[this.props.bookArr.length - 1].id) + 1
           this.props.addNewBook(newBook);
-          this.props.closeModal(event , true);
-
-
+          this.props.closeModal(event, true);
         }
-      
 
       }
 
     }
-
-
 
 
   }
@@ -101,20 +81,19 @@ class BookModal extends React.Component {
         date: this.props.bookInfo.date,
         author: this.props.bookInfo.author
       });
-      // this.bookDate.value = this.props.bookInfo.date;
-      //console.info(this.bookDate.value);
+
     }
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
 
-    if(this.state.bookName.length===1 && this.state.nameValidation === "error"){
+    if (this.state.bookName.length === 1 && this.state.nameValidation === "error") {
       this.setState({nameValidation: null});
     }
-    if(this.state.author.length===1 && this.state.authorValidation === "error"){
+    if (this.state.author.length === 1 && this.state.authorValidation === "error") {
       this.setState({authorValidation: null});
     }
-    if(this.state.date.length===10 && this.state.dateValidation === "error"){
+    if (this.state.date.length === 10 && this.state.dateValidation === "error") {
       this.setState({dateValidation: null});
     }
 
@@ -159,7 +138,6 @@ class BookModal extends React.Component {
                 <FormControl type="date"
                              value={this.state.date}
                              onChange={(e) => this.setState({date: e.currentTarget.value})}
-                //             ref={(bookDate) => this.bookDate = bookDate}
                 />
                 {this.state.dateValidation === "error" &&
                 <HelpBlock>Please enter a books name.</HelpBlock>}

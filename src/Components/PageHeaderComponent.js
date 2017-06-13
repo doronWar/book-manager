@@ -21,9 +21,10 @@ class PageHeaderComponent extends React.Component{
       if(book!== -1){
         this.props.curentBookHovered(book)
       }
-      if(book===-1){
+      if(book===-1 && this.state.searchTerm!== ""){
         window.alert("Sorry, this book isn't registered")
       }
+      this.setState({searchTerm:""})
   }
 
   searchForBookByKey(event){
@@ -39,7 +40,7 @@ class PageHeaderComponent extends React.Component{
 
       <PageHeader><div className="header"> Book Data Manager App</div>
       <input className="Search-control" placeholder="SEARCH FOR BOOK..."
-      value={this.state.value}
+      value={this.state.searchTerm}
              onChange={(e)=>this.setState({searchTerm:e.currentTarget.value})}
              onBlur={(e)=> this.searchForBook(e)}
              onKeyDown={(e)=> this.searchForBookByKey(e)}

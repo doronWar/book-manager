@@ -40,10 +40,7 @@ class InfoPanel extends React.Component{
 
 
   }
-  // componentWillMount(){
-  //   const book = this.props.bookArr.find((book)=> book.id === this.props.curentBook);
-  //   this.
-  // }
+
 
   render(){
     return(

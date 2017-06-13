@@ -1,41 +1,31 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {connect} from 'react-redux'
 import uuid from 'uuid'
-// import 'bootstrap'
-// import 'react-bootstrap'
 import InfoPanel from './Components/InfoPanel'
 import BookModal from './Components/BookModal'
 import PageHeaderComponent from './Components/PageHeaderComponent'
 
 import {
-  Button,
-  FormGroup,
-  ControlLabel,
-  FormControl,
-  Grid,
-  Row,
-  Col,
-  Thumbnail
+  Button
 } from 'react-bootstrap'
 
 
 class App extends Component {
 
-  constructor(){
+  constructor() {
     super();
-    this.state={
+    this.state = {
       openModal: false,
     }
-    this.closeModal= this.closeModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.upperLowerCasechanger = this.upperLowerCasechanger.bind(this)
-    // this.openModal= this.openModal.bind(this);
+
 
   }
 
   bookList() {
-    
+
     const booksFromJson = this.props.bookArr;
     let counter = 0;
     return (
@@ -46,25 +36,25 @@ class App extends Component {
           return (  <li key={uuid()}
                         id={counter++}
                         onMouseOver={(e) => this.props.curentBookHovered(e.currentTarget.id)}
-                       // onMouseOut={(e) => this.props.clearBookHovered()}
+
           ><p>{book.title}</p></li>)
         })}
       </ul>
     )
   }
 
-  closeModal(event, canCloase){
+  closeModal(event, canCloase) {
 
-    if(event.target.className==='modal' || event.target.id==='cancel-btn'){
+    if (event.target.className === 'modal' || event.target.id === 'cancel-btn') {
       this.setState({openModal: false})
     }
 
-    if(canCloase){
+    if (canCloase) {
       this.setState({openModal: false})
     }
   }
 
-  openModal(){
+  openModal() {
     this.setState({openModal: true})
   }
 
@@ -74,21 +64,20 @@ class App extends Component {
     xhr.send();
     xhr.addEventListener('load', (e) => {
 
-      // this.props.saveLoadedJason(JSON.parse(e.currentTarget.response).books);
       this.pipeFunc(JSON.parse(e.currentTarget.response).books);
     })
   }
 
-  pipeFunc(books){
-    books=books.map((book)=>{
+  pipeFunc(books) {
+    books = books.map((book) => {
       let title = book.title.split(' ');
       let author = book.author.split(' ');
 
-      title = title.map((word)=>{
+      title = title.map((word) => {
         return this.upperLowerCasechanger(word);
       });
 
-      author = author.map((word)=>{
+      author = author.map((word) => {
         return this.upperLowerCasechanger(word);
       });
       book.title = title.join(' ');
@@ -98,58 +87,50 @@ class App extends Component {
     this.props.saveLoadedJason(books);
   }
 
-  upperLowerCasechanger(word){
-    word= word.match(/[a-z, A-Z, .]/g);
+  upperLowerCasechanger(word) {
+    word = word.match(/[a-z, A-Z, .]/g);
 
     for (let i in word) {
-      if(i==='0'){
-        word[i]= word[i].toUpperCase();
+      if (i === '0') {
+        word[i] = word[i].toUpperCase();
       }
-      else{
-        word[i]=word[i].toLowerCase();
+      else {
+        word[i] = word[i].toLowerCase();
       }
     }
     return word.join('')
 
   }
 
-  closeInfoComponent(event){
-    console.info(event.target.className );
-    if(event.target.className === 'main-book-holder' || event.target.className === 'page-header' || event.target.className === 'header' || event.target.className === 'App'){
+  closeInfoComponent(event) {
+    if (event.target.className === 'main-book-holder' || event.target.className === 'page-header' || event.target.className === 'header' || event.target.className === 'App') {
       this.props.clearBookHovered();
     }
   }
-  // componentDidUpdate() {
-  //   // console.info(this.props.bookArr);
-  //
-  //   // if (this.props.curentBook) {
-  //   //
-  //   // }
-  //
-  // }
+
 
   render() {
     return (
       <div className="App"
-           onClick={(e)=>this.closeInfoComponent(e)}>
+           onClick={(e) => this.closeInfoComponent(e)}>
         <PageHeaderComponent/>
         <div className="main-book-holder"
         >
-        {this.bookList()}
+          {this.bookList()}
         </div>
-        {this.props.curentBook!==-1 && <InfoPanel
+        {this.props.curentBook !== -1 && <InfoPanel
 
         />}
         <Button
-        onClick={() => {
-          this.props.clearBookHovered();
-          this.openModal();
-        }}
+          onClick={() => {
+            this.props.clearBookHovered();
+            this.openModal();
+          }}
         >Add a Book</Button>
         {this.state.openModal && <BookModal
-        closeModal={this.closeModal}
+          closeModal={this.closeModal}
 
-        title="Add New Book"/>}
+          title="Add New Book"/>}
 
       </div>
     );
