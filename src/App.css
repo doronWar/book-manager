@@ -1,6 +1,6 @@
 .App {
   width:100vw;
-  height:100vh;
+  /*height:100vh;*/
 
 }
 
@@ -61,7 +61,7 @@
 
 .book-info{
   position: absolute;
-  top: 15%;
+  top: 16%;
   left:35%;
 
 }
@@ -105,7 +105,7 @@
 
 
 .book-info > .container > .row  > .col-md-4 > .thumbnail{
-  height: 555px;
+  height: 535px;
   /*width: 433px;*/
   position: relative;
   box-shadow: 4px 8px 16px 3px;
