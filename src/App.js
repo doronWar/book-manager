@@ -29,6 +29,7 @@ class App extends Component {
       openModal: false,
     }
     this.closeModal= this.closeModal.bind(this);
+    this.upperLowerCasechanger = this.upperLowerCasechanger.bind(this)
     // this.openModal= this.openModal.bind(this);
 
   }
@@ -147,6 +148,7 @@ class App extends Component {
         >Add a Book</Button>
         {this.state.openModal && <BookModal
         closeModal={this.closeModal}
+
         title="Add New Book"/>}
 
       </div>

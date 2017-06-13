@@ -68,3 +68,12 @@
     {/*</Col>*/}
   {/*</Row>*/}
 {/*</Grid>*/}
+
+
+
+// when added uppercase:
+// let title = this.state.bookName.split(' ');
+// title = title.map((word)=> this.props.upperLowerCasechanger(word));
+//
+// let author = this.state.author.split(' ');
+// author = author.map((word)=> this.props.upperLowerCasechanger(word));

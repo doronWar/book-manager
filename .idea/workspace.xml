@@ -4,9 +4,7 @@
     <list default="true" id="adb4fafe-a136-466f-a873-03b2172cfec0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/BookModal.js" afterPath="$PROJECT_DIR$/src/Components/BookModal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/InfoPanel.js" afterPath="$PROJECT_DIR$/src/Components/InfoPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/PageHeaderComponent.js" afterPath="$PROJECT_DIR$/src/Components/PageHeaderComponent.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Reducers/CurentBookReducer.js" afterPath="$PROJECT_DIR$/src/Reducers/CurentBookReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Components/tempToErase.js" afterPath="$PROJECT_DIR$/src/Components/tempToErase.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,93 +21,53 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.55532926">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/App.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1067">
-                  <caret line="138" column="35" lean-forward="false" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
-                  <folding>
-                    <element signature="e#0#39#0" expanded="true" />
-                    <element signature="e#201#247#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="booklist.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/public/booklist.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="InfoPanel.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Components/InfoPanel.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="42" column="2" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="45" selection-end-column="6" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/App.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="89">
-                  <caret line="65" column="16" lean-forward="false" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="PageHeaderComponent.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Components/PageHeaderComponent.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="332">
-                  <caret line="24" column="23" lean-forward="false" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="BookModal.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Components/BookModal.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="317">
-                  <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
-                  <folding>
-                    <element signature="e#0#25#0" expanded="true" />
-                    <marker date="1497354432000" expanded="true" signature="492:665" ph="..." />
-                    <marker date="1497354432000" expanded="true" signature="2851:5144" ph="..." />
-                    <marker date="1497354432000" expanded="true" signature="2908:5131" ph="..." />
-                    <marker date="1497354432000" expanded="true" signature="2933:3006" ph="..." />
-                    <marker date="1497354432000" expanded="true" signature="3030:4776" ph="..." />
-                    <marker date="1497354432000" expanded="true" signature="4802:5106" ph="..." />
-                    <marker date="1497354432000" expanded="true" signature="4839:4929" ph="..." />
-                    <marker date="1497354432000" expanded="true" signature="4964:5080" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="App.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="128" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#201#247#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="booklist.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/booklist.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InfoPanel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/InfoPanel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="42" column="2" lean-forward="false" selection-start-line="42" selection-start-column="5" selection-end-line="45" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="App.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="89">
+              <caret line="65" column="16" lean-forward="false" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -125,15 +83,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Components/tempToErase.js" />
         <option value="$PROJECT_DIR$/src/Reducers/BookArrReducer.js" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/public/booklist.json" />
         <option value="$PROJECT_DIR$/src/Components/InfoPanel.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Reducers/CurentBookReducer.js" />
         <option value="$PROJECT_DIR$/src/Components/PageHeaderComponent.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Components/BookModal.js" />
+        <option value="$PROJECT_DIR$/src/Components/tempToErase.js" />
       </list>
     </option>
   </component>
@@ -324,12 +282,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497281833704</updated>
-      <workItem from="1497281836885" duration="26070000" />
+      <workItem from="1497281836885" duration="26735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26070000" />
+    <option name="totallyTimeSpent" value="26735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="38" y="103" width="1786" height="977" extended-state="0" />
@@ -369,14 +327,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="20" lean-forward="false" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/tempToErase.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="41" column="9" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="69" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -425,31 +375,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/Components/tempToErase.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1067">
-          <caret line="138" column="35" lean-forward="false" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#201#247#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1007">
+          <caret line="74" column="0" lean-forward="false" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/BookModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
+        <state relative-caret-position="392">
           <caret line="57" column="8" lean-forward="false" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
-            <marker date="1497354432000" expanded="true" signature="492:665" ph="..." />
-            <marker date="1497354432000" expanded="true" signature="2851:5144" ph="..." />
-            <marker date="1497354432000" expanded="true" signature="2908:5131" ph="..." />
-            <marker date="1497354432000" expanded="true" signature="2933:3006" ph="..." />
-            <marker date="1497354432000" expanded="true" signature="3030:4776" ph="..." />
-            <marker date="1497354432000" expanded="true" signature="4802:5106" ph="..." />
-            <marker date="1497354432000" expanded="true" signature="4839:4929" ph="..." />
-            <marker date="1497354432000" expanded="true" signature="4964:5080" ph="..." />
+            <marker date="1497355163000" expanded="true" signature="492:665" ph="..." />
+            <marker date="1497355163000" expanded="true" signature="2845:5138" ph="..." />
+            <marker date="1497355163000" expanded="true" signature="2902:5125" ph="..." />
+            <marker date="1497355163000" expanded="true" signature="2927:3000" ph="..." />
+            <marker date="1497355163000" expanded="true" signature="3024:4770" ph="..." />
+            <marker date="1497355163000" expanded="true" signature="4796:5100" ph="..." />
+            <marker date="1497355163000" expanded="true" signature="4833:4923" ph="..." />
+            <marker date="1497355163000" expanded="true" signature="4958:5074" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="121" column="0" lean-forward="false" selection-start-line="121" selection-start-column="0" selection-end-line="128" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#201#247#0" expanded="true" />
           </folding>
         </state>
       </provider>

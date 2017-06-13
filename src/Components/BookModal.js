@@ -55,7 +55,9 @@ class BookModal extends React.Component {
         window.alert("This book is already registered in the system")
       }
       else{
-        
+
+
+
         const newBook = {
           title: this.state.bookName,
           author: this.state.author,
