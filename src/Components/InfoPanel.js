@@ -16,6 +16,7 @@ class InfoPanel extends React.Component{
     super();
     this.state={
       openEditModal: false,
+      book:{},
     }
     this.closeEditModal= this.closeEditModal.bind(this);
   }
@@ -39,6 +40,10 @@ class InfoPanel extends React.Component{
 
 
   }
+  // componentWillMount(){
+  //   const book = this.props.bookArr.find((book)=> book.id === this.props.curentBook);
+  //   this.
+  // }
 
   render(){
     return(

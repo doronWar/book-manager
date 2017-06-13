@@ -16,13 +16,35 @@ class PageHeaderComponent extends React.Component{
   }
 
 
+  searchForBook(){
+      const book = this.props.bookArr.findIndex((book)=> book.title === this.state.searchTerm)
+      if(book!== -1){
+        this.props.curentBookHovered(book)
+      }
+      if(book===-1){
+        window.alert("Sorry, this book isn't registered")
+      }
+  }
+
+  searchForBookByKey(event){
+
+      if(event.keyCode===13){
+        this.searchInputValue.blur();
+      }
+  }
 
 
   render(){
     return(
 
       <PageHeader><div className="header"> Book Data Manager App</div>
-      <input className="Search-control" placeholder="SEARCH FOR BOOK..."/>
+      <input className="Search-control" placeholder="SEARCH FOR BOOK..."
+      value={this.state.value}
+             onChange={(e)=>this.setState({searchTerm:e.currentTarget.value})}
+             onBlur={(e)=> this.searchForBook(e)}
+             onKeyDown={(e)=> this.searchForBookByKey(e)}
+             ref={(search)=> this.searchInputValue = search }
+      />
 
       </PageHeader>
     )

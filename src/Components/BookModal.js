@@ -50,28 +50,37 @@ class BookModal extends React.Component {
     }
     else {
 
-      const newBook = {
-        title: this.state.bookName,
-        author: this.state.author,
-        date: this.state.date,
-        img: " none",
-        // id: parseInt(this.props.bookArr[this.props.bookArr.length - 1].id) + 1
-      };
-
-      if (this.props.bookInfo) {
-        newBook.id= this.props.bookInfo.id
-
-        // console.info(newBook, this.props.bookArr[1]);
-        this.props.saveChanges(newBook);
-
-        this.props.closeModal(event , true);
-        //load save function
+      const bookTitleExists =  this.props.bookArr.findIndex((book)=> book.title === this.state.bookName)
+      if(bookTitleExists!== -1){
+        window.alert("This book is already registered in the system")
       }
-      else {
-          newBook.id= parseInt(this.props.bookArr[this.props.bookArr.length - 1].id) + 1
-        this.props.addNewBook(newBook);
-        this.props.closeModal(event , true);
+      else{
+        
+        const newBook = {
+          title: this.state.bookName,
+          author: this.state.author,
+          date: this.state.date,
+          img: " none",
+          // id: parseInt(this.props.bookArr[this.props.bookArr.length - 1].id) + 1
+        };
 
+        if (this.props.bookInfo) {
+          newBook.id= this.props.bookInfo.id
+
+          // console.info(newBook, this.props.bookArr[1]);
+          this.props.saveChanges(newBook);
+
+          this.props.closeModal(event , true);
+          //load save function
+        }
+        else {
+          newBook.id= parseInt(this.props.bookArr[this.props.bookArr.length - 1].id) + 1
+          this.props.addNewBook(newBook);
+          this.props.closeModal(event , true);
+
+
+        }
+      
 
       }
 

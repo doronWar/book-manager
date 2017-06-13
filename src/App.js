@@ -136,7 +136,7 @@ class App extends Component {
         >
         {this.bookList()}
         </div>
-        {this.props.curentBook!==0 && <InfoPanel
+        {this.props.curentBook!==-1 && <InfoPanel
 
         />}
         <Button
