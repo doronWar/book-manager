@@ -1,6 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
-
+import {connect} from 'react-redux'
 
 
 import {
@@ -10,84 +9,161 @@ import {
   Row,
   Col,
   Thumbnail,
-  Modal
+  Modal,
+  FormGroup,
+  FormControl,
+  ControlLabel,
+  HelpBlock
 } from 'react-bootstrap'
-class BookModal extends React.Component{
+class BookModal extends React.Component {
 
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      bookName:"",
-      date:"2013-12-31"
+    this.state = {
+      bookName: "",
+      author: "",
+      date: "",
+      nameValidation: null,
+      authorValidation: null,
+      dateValidation: null
     }
   }
 
-  
-  
-  componentDidMount(){
-    if(this.props.bookInfo){
+
+  saveChanges(event) {
+
+    if(this.state.bookName=== ""){
+
+      this.setState({nameValidation: "error"})
+    }
+    if(this.state.author=== ""){
+
+      this.setState({authorValidation: "error"})
+    }
+    if(this.state.date.length<1){
+      this.setState({dateValidation: "error"})
+    }
+    else {
+
+      const newBook = {
+        title: this.state.bookName,
+        author: this.state.author,
+        date: this.state.date,
+        img: " none",
+        // id: parseInt(this.props.bookArr[this.props.bookArr.length - 1].id) + 1
+      };
+
+      if (this.props.bookInfo) {
+        newBook.id= parseInt(this.props.bookArr[this.props.bookArr.length - 1].id)
+          console.info(newBook);
+        this.props.saveChanges(newBook);
+        //load save function
+      }
+      else {
+          newBook.id= parseInt(this.props.bookArr[this.props.bookArr.length - 1].id) + 1
+        this.props.addNewBook(newBook);
+        this.props.closeModal(event , true);
+
+
+      }
+
+    }
+
+
+
+
+  }
+
+  componentDidMount() {
+    if (this.props.bookInfo) {
       console.info(this.props.bookInfo);
-      this.setState({bookName: this.props.bookInfo.title});
+      this.setState({
+        bookName: this.props.bookInfo.title,
+        date: this.props.bookInfo.date,
+        author: this.props.bookInfo.author
+      });
       // this.bookDate.value = this.props.bookInfo.date;
-      console.info(this.bookDate.value);
+      //console.info(this.bookDate.value);
     }
   }
 
   componentDidUpdate(){
-    console.info(this.state.date);
+
+    if(this.state.bookName.length===1 && this.state.nameValidation === "error"){
+      this.setState({nameValidation: null});
+    }
+    if(this.state.author.length===1 && this.state.authorValidation === "error"){
+      this.setState({authorValidation: null});
+    }
+    if(this.state.date.length===10 && this.state.dateValidation === "error"){
+      this.setState({dateValidation: null});
+    }
+    console.info(this.state.date.length);
+
   }
-  render(){
-    const title = this.props.title? this.props.title: "Edit Info";
-    
-    return(
+
+  render() {
+    const title = this.props.title ? this.props.title : "Edit Info";
+    return (
 
 
-    <div className="static-modal" onClick={(e)=>this.props.closeModal(e)}
-    >
-      <Modal.Dialog>
-        <Modal.Header>
-          <Modal.Title>{title}</Modal.Title>
-        </Modal.Header>
+      <div className="static-modal" onClick={(e) => this.props.closeModal(e)}
+      >
+        <Modal.Dialog>
+          <Modal.Header>
+            <Modal.Title>{title}</Modal.Title>
+          </Modal.Header>
 
-        <Modal.Body>
-          <Grid>
-            <Row>
-              <Col xs={6} md={4}>
-                <Thumbnail src="/assets/thumbnaildiv.png" alt="242x200">
-                  <label>Book Name
-                    <input type="text" value={this.state.bookName}
-                           placeholder="Enter books name"
-                           onChange={(e)=>this.setState({bookName:e.currentTarget.value})}
-                    />
-                  </label>
-                  <label>Book Release Date
-                    <input type="date"
-                           value={this.state.date}
-                           onChange={(e)=>this.setState({date: e.currentTarget.value})}
-                           ref={(bookDate)=>this.bookDate = bookDate}
-                    />
-                  </label>
-                </Thumbnail>
-              </Col>
-            </Row>
-          </Grid>
-        </Modal.Body>
+          <Modal.Body>
 
-        <Modal.Footer>
-          <Button id="cancel-btn"
-            onClick={(e)=>this.props.closeModal(e)}
-          >Close</Button>
-          <Button
-            onClick={()=>console.info(this.bookDate.value)}
-            bsStyle="primary">Save changes</Button>
-        </Modal.Footer>
 
-      </Modal.Dialog>
-    </div>
+            <form>
+              <FormGroup controlId="formValidationError1" validationState={this.state.nameValidation}>
+                <ControlLabel>Book Title</ControlLabel>
+                <FormControl type="text" value={this.state.bookName}
+                             placeholder="Enter books name"
+                             onChange={(e) => this.setState({bookName: e.currentTarget.value})}/>
+                {this.state.nameValidation === "error" &&
+                <HelpBlock>Please enter a books name.</HelpBlock>}
+
+              </FormGroup>
+              <FormGroup controlId="formValidationNull" validationState={this.state.authorValidation}>
+                <ControlLabel>Author</ControlLabel>
+                <FormControl type="text" value={this.state.author}
+                             placeholder="Enter author name"
+                             onChange={(e) => this.setState({author: e.currentTarget.value})}/>
+                {this.state.authorValidation === "error" &&
+                <HelpBlock>Please enter the authors name.</HelpBlock>}
+              </FormGroup>
+              <FormGroup controlId="formValidationSuccess1" validationState={this.state.dateValidation}>
+                <ControlLabel>Date of publication</ControlLabel>
+                <FormControl type="date"
+                             value={this.state.date}
+                             onChange={(e) => this.setState({date: e.currentTarget.value})}
+                //             ref={(bookDate) => this.bookDate = bookDate}
+                />
+                {this.state.dateValidation === "error" &&
+                <HelpBlock>Please enter a books name.</HelpBlock>}
+              </FormGroup>
+            </form>
+
+
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button id="cancel-btn"
+                    onClick={(e) => this.props.closeModal(e)}
+            >Cancel</Button>
+            <Button id="save-btn"
+                    onClick={(e) => this.saveChanges(e)}
+                    bsStyle="primary">Save changes</Button>
+          </Modal.Footer>
+
+        </Modal.Dialog>
+      </div>
     )
   }
 }
-
 
 
 function mapStateToProps(data) {
@@ -99,21 +175,16 @@ function mapStateToProps(data) {
 
 function mapdispatchToProps(dispatch) {
   return ({
-    saveLoadedJason(bookList){
+    addNewBook(book){
       dispatch({
-        type: 'LOAD_LIST_FROM_JSON',
-        Jsonlist: bookList
+        type: 'ADD_BOOK',
+        book: book,
       })
     },
-    curentBookHovered(bookId){
+    saveChanges(book){
       dispatch({
-        type: 'BOOK_HOEVERED',
-        book: bookId
-      })
-    },
-    clearBookHovered(){
-      dispatch({
-        type: 'BOOK_UNHOEVERED',
+        type: 'SAVE_CHANGES',
+        book: book,
       })
     },
   })

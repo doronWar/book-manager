@@ -44,7 +44,9 @@ class InfoPanel extends React.Component{
             <Col xs={6} md={4}>
               <Thumbnail src="/Painting27.jpg" alt="book cover">
                 <h3>Book Title:  {this.props.bookArr[this.props.curentBook].title}</h3>
-                <p>Release Date:  {this.props.bookArr[this.props.curentBook].date}</p>
+                <p>By:  {this.props.bookArr[this.props.curentBook].author}</p>
+                <p>Publish Date:  {this.props.bookArr[this.props.curentBook].date}</p>
+
                 <div className="info-btn-holder">
                   <Button bsStyle="primary"
                   onClick={()=>{

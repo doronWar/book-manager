@@ -52,12 +52,15 @@ class App extends Component {
     )
   }
 
-  closeModal(event){
+  closeModal(event, canCloase){
 
-    if(event.target.className==='modal' || event.target.id==='cancel-btn' ){
+    if(event.target.className==='modal' || event.target.id==='cancel-btn'){
       this.setState({openModal: false})
     }
 
+    if(canCloase){
+      this.setState({openModal: false})
+    }
   }
 
   openModal(){
