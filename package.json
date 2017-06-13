@@ -25,5 +25,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://doronWar.github.io/temp-test-app"
+  "homepage": "https://doronwar.github.io/book-manager/"
 }

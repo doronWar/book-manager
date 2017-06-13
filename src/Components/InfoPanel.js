@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import basicImg from '../Painting27.jpg'
 
 import BookModal from './BookModal'
 import {
@@ -49,7 +50,7 @@ class InfoPanel extends React.Component{
         <Grid>
           <Row>
             <Col xs={6} md={4}>
-              <Thumbnail src="/Painting27.jpg" alt="book cover">
+              <Thumbnail src={basicImg} alt="book cover">
                 <h3>Book Title:  {this.props.bookArr[this.props.curentBook].title}</h3>
                 <p>By:  {this.props.bookArr[this.props.curentBook].author}</p>
                 <p>Publish Date:  {this.props.bookArr[this.props.curentBook].date}</p>
